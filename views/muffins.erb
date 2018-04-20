@@ -1,0 +1,33 @@
+<main class="four bd-content" id="content" role="main">
+    <div class="z">
+        <div class="banner muffins">
+        <div class="banner-info">
+				<div class="container">
+				<h1>Muffins </h1>
+				<h3>Puffins</h3>
+				</div>
+			</div>
+        </div
+        <section class="products">
+            <div class="container">	
+                <div class="card-wrapper">
+                    <% settings.bakery.muffins.each do |muffin| %>
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src=<%= muffin.image %> alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= muffin.name %><span class="card-text"><%= muffin.price %></span></h5>
+                                    <p class="card-text"><%= muffin.description %></p>
+                                    <div class="product-quantity">
+                                    <input type="number" value="2" min="1">
+                                    <button class="btn-sm add-product">
+                                        Add to cart
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+    </div>
+</div> <!--  	main	 -->
