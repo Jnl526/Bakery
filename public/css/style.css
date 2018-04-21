@@ -196,6 +196,7 @@ input[type=email]:not(.browser-default):focus:not([readonly]) {
   content: "";
   background: url(../images/cart.png) no-repeat;
   padding: 0 15px;
+  filter: grayscale(100) brightness(10);
 }
 
 /**** Top Header ****/
