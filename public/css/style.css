@@ -399,11 +399,11 @@ header .input-field .prefix ~ input {
 
 .banner:before {
   content: "";
-  position: fixed;
+  position: absolute;
   top: 0;
   display: block;
   background-color: rgba(65, 57, 55, 0.67);
-  height: 100vh;
+  height: 500px;
   width: 100%;
 }
 

@@ -34,8 +34,8 @@ get '/contact' do
     erb :contact
 end
 
-get '/goodies' do 
-    erb :pastries
+get '/thank_you' do 
+    erb :thank_you
 end
 
 post '/' do
@@ -55,7 +55,7 @@ post '/' do
     puts response.body
     puts response.headers
 
-    redirect '/'
+    redirect '/thank_you'
 
     erb :html
     
