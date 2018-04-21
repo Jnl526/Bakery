@@ -233,6 +233,10 @@ header {
 .four{
     background: $mainfour;
     }
+.five{
+    background: $mainfive;
+    }
+
  .about,
  .contact{
         background-image: $about;
@@ -243,13 +247,18 @@ header {
 .cookies{
     background-image: $cookies;
     }
-    .muffins{
-        background-image: $muffins;
-        }
+.muffins{
+    background-image: $muffins;
+}
+.pastries{
+    background-image: $pastries;
+}
+        
 .one,
 .two,
 .three,
 .four,
+.five,
 .banner
 {
     background-size: cover;

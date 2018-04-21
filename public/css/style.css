@@ -346,6 +346,10 @@ header .input-field .prefix ~ input {
   background: url(../images/mainfourbk.jpg);
 }
 
+.five {
+  background: url(../images/mainfivebk.jpg);
+}
+
 .about,
 .contact {
   background-image: url(../images/contact-banner.jpg);
@@ -363,10 +367,15 @@ header .input-field .prefix ~ input {
   background-image: url(../images/muffins-banner.jpg);
 }
 
+.pastries {
+  background-image: url(../images/pastries-banner.jpg);
+}
+
 .one,
 .two,
 .three,
 .four,
+.five,
 .banner {
   background-size: cover;
   background-attachment: fixed;

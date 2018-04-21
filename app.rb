@@ -26,6 +26,10 @@ get '/muffins' do
     erb :muffins
 end
 
+get '/all_pastries' do 
+    erb :pastries
+end
+
 get '/about' do 
     erb :about
 end
