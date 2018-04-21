@@ -1,14 +1,15 @@
 class Bakery
-  attr_accessor :cakes, :cookies, :muffins, :bakery  
+  attr_accessor :cakes, :cookies, :muffins, :all  
   def initialize
       @cakes = []
       @cookies = []
       @muffins = []
-      @bakery = bakery
+      @all = []
   end
 
 # add pastry types into it's own hash in bakery
 def addPastry(pastry)
+  @all.push(pastry)
   case pastry.type
     when 'cake'
       #Push pastry object into cake hash
@@ -20,6 +21,7 @@ def addPastry(pastry)
         #Push pastry object into muffins hash
         @muffins.push(pastry)
     end
+
   end
 
 end
@@ -36,3 +38,5 @@ class Pastry
 
 end
 
+
+puts @all

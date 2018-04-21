@@ -22,6 +22,7 @@ h3 {
 }
 
 a,
+a:hover,
 .text-tan {
   color: #cea88a;
 }
@@ -39,12 +40,19 @@ p {
   margin: auto;
 }
 
-.btn-outline-success {
+.btn {
   color: #fff;
   background-color: rgba(105, 75, 47, 0.4);
   background-image: none;
   border-color: transparent;
   border-radius: 0;
+}
+
+.btn:focus, .btn:hover {
+  color: #fff;
+  background-color: #694b2f;
+  border-color: #694b2f;
+  box-shadow: none;
 }
 
 .form-control {
@@ -175,6 +183,10 @@ input[type=email]:not(.browser-default):focus:not([readonly]) {
   color: #fff;
 }
 
+:focus {
+  outline: none;
+}
+
 .mini-cart:after, .mini-cart:before {
   content: "";
   display: table;
@@ -286,10 +298,19 @@ header .input-field .prefix ~ input {
   display: none;
 }
 
+.navbar-toggler {
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
 .menu-icon:before {
   content: '\2630';
   font-size: 1.35em;
-  color: #fff;
+  color: #000;
   font-style: normal;
 }
 
@@ -298,7 +319,7 @@ header .input-field .prefix ~ input {
   margin: 0 0 35px;
 }
 
-tent:before {
+#content:before {
   content: "";
   position: fixed;
   top: 0;
@@ -354,11 +375,16 @@ tent:before {
   display: inline-block;
 }
 
-video {
-  max-width: 100%;
-  width: 100%;
-  z-index: 1;
+#video-background {
+  /*  making the video fullscreen  */
   position: relative;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
 }
 
 /**** Banner ****/
@@ -369,6 +395,16 @@ video {
   position: relative;
   overflow: hidden;
   background-color: #000;
+}
+
+.banner:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  display: block;
+  background-color: rgba(65, 57, 55, 0.67);
+  height: 100vh;
+  width: 100%;
 }
 
 .banner img {
@@ -493,6 +529,7 @@ video {
 
 .newsletter .mailing-list-wrapper {
   text-align: center;
+  overflow: hidden;
 }
 
 .newsletter .mailing-list-wrapper input {
@@ -585,10 +622,21 @@ section {
   height: 100vh;
 }
 
+.section_about .col-md-4 {
+  background-color: rgba(0, 0, 0, 0.23);
+  padding: 43px;
+}
+
 /**** Forms ****/
 .section_contact__info {
   text-align: center;
   color: #fff;
+  margin-bottom: 35px;
+}
+
+.section_contact__info ul li {
+  display: inline-block;
+  padding: 0 10px;
 }
 
 .section_contact__form {
@@ -653,53 +701,12 @@ section {
 
 /**** Footer ****/
 .section_footer {
-  padding: 6em 0;
+  padding: 6em 0 20px;
   color: #fff;
 }
 
-.footer-container {
-  margin-bottom: 25px;
-}
-
-.footer-container li a {
-  color: #636363;
-  text-decoration: none;
-}
-
-.footer-social {
-  text-align: center;
-  padding: 15px 0;
-}
-
-.footer-social ul li {
+.section_footer ul li {
   display: inline-block;
-}
-
-.footer-social li {
-  padding: 0 10px;
-}
-
-.footer-social a {
-  font-family: FontAwesome;
-  font-size: 23px;
-  color: #000;
-  text-align: center;
-}
-
-.icon-instagram:before {
-  content: "\f16d";
-}
-
-.icon-pinterest:before {
-  content: "\f231";
-}
-
-.icon-facebook:before {
-  content: "\f09a";
-}
-
-.icon-twitter:before {
-  content: "\f099";
 }
 
 .copyright {
@@ -707,6 +714,7 @@ section {
   text-align: right;
   font-size: 11px;
   color: #807b7b;
+  width: 100%;
 }
 
 /************************************************************************
@@ -887,6 +895,11 @@ section {
 }
 
 @media (max-width: 768px) {
+  header {
+    position: relative;
+    padding: 0;
+    height: 80px;
+  }
   nav .brand-logo {
     left: 45%;
     -webkit-transform: translateX(-50%);
@@ -902,6 +915,7 @@ section {
     background-color: #35302e;
     text-align: center;
     padding: 34px;
+    z-index: 2;
   }
   .header-search,
   .hide-on-med-and-down {
@@ -956,6 +970,9 @@ section {
   .video .image-info {
     padding: 0;
     overflow: hidden;
+    width: 100%;
+  }
+  #video-background {
     width: 100%;
   }
   .media .col-3 {
@@ -1038,7 +1055,7 @@ section {
     width: 155px;
   }
   section {
-    padding: 0;
+    padding: 2em 0;
   }
   .footer-links .footer-item {
     display: block;

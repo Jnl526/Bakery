@@ -22,6 +22,7 @@ h3 {
 }
 
 a,
+a:hover,
 .text-tan{
 color: #cea88a;
 }
@@ -38,12 +39,19 @@ color: #cea88a;
         margin: auto;
     
 }
-.btn-outline-success {
+.btn {
     color: #fff;
     background-color: rgba(105, 75, 47, 0.4);
     background-image: none;
     border-color: transparent;
     border-radius: 0;
+    &:focus,
+    &:hover {
+        color: #fff;
+        background-color: #694b2f;
+        border-color: #694b2f;
+        box-shadow: none;
+    }
 }
 .form-control {
     display: block;

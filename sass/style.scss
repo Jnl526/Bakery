@@ -71,7 +71,9 @@ input[type=email]:not(.browser-default):focus:not([readonly]){
   :-moz-placeholder { /* Firefox 18- */
     color: #fff;
   }
-
+:focus {
+    outline: none;
+}
 .mini-cart{
     &:after, 
     &:before {
@@ -185,11 +187,19 @@ header {
 .mobile-header{
     display: none;
 }
+.navbar-toggler {
+    padding: 0;
+    font-size: 1.25rem;
+    line-height: 0;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
 .menu-icon{
     &:before {
     content: '\2630';
     font-size: 1.35em;
-    color: #fff;
+    color: #000;
     font-style: normal;
 }
 }
@@ -198,7 +208,7 @@ header {
 .main {
     margin: 0 0 35px;
 }
-tent{
+#content{
     &:before {
         content: "";
         position: fixed;
@@ -249,13 +259,17 @@ tent{
 	display: inline-block;    
 }
 
-video {
-    max-width: 100%;
-    width: 100%;
-    z-index: 1;
-    position: relative;
-    
-}
+#video-background {
+    /*  making the video fullscreen  */
+      position: relative;
+      right: 0; 
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      width: auto; 
+      height: auto;
+      z-index: -100;
+    }
 /**** Banner ****/
 
 .banner {
@@ -265,6 +279,15 @@ video {
     position: relative; 
     overflow:hidden;
     background-color: #000;
+      &:before{
+        content: "";
+        position: fixed;
+        top: 0;
+        display: block;
+        background-color: rgba(65, 57, 55, 0.67);
+        height: 100vh;
+        width: 100%;
+    }
         img{
             opacity: 0.6;
         }
@@ -379,6 +402,7 @@ video {
     background: #F2F2F2;
     .mailing-list-wrapper {
         text-align: center;
+        overflow: hidden;
         input {
             display: inline-block;
             &[type="email"] {
@@ -462,12 +486,21 @@ section{
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
+    .col-md-4{
+        background-color: rgba(0, 0, 0, 0.23);
+        padding: 43px;
+    }
     
 }
 /**** Forms ****/
 .section_contact__info{
     text-align: center;
     color: #fff;
+    margin-bottom: 35px;
+    ul li {
+        display: inline-block;
+        padding: 0 10px
+    }
 }
 .section_contact__form {
     overflow: hidden;  
@@ -525,47 +558,11 @@ section{
 
 /**** Footer ****/
 .section_footer {
-    padding: 6em 0;
+    padding: 6em 0 20px;
     color: #fff;
-}
-.footer-container {
-    margin-bottom: 25px;
-    li a {
-        color: #636363;
-        text-decoration: none;
+    ul li {
+        display: inline-block;
     }
-}
-.footer-social  {
-    text-align: center;
-    padding: 15px 0;
-        ul li {
-            display: inline-block;
-        }
-
-        li {
-        padding: 0 10px;
-        }
-        a {
-            font-family: FontAwesome;
-            font-size: 23px;
-            color: #000;
-            text-align: center;
-        }
-}
-.icon-instagram:before {
-    content: "\f16d";
-}
-
-.icon-pinterest:before {
-    content: "\f231";
-}
-
-.icon-facebook:before {
-    content: "\f09a";
-}
-
-.icon-twitter:before {
-    content: "\f099";
 }
 
 .copyright {
@@ -573,6 +570,7 @@ section{
     text-align: right;
     font-size: 11px;
     color: #807b7b;
+    width: 100%;
 }
 
 /************************************************************************
@@ -784,7 +782,11 @@ section{
   }
   
   @media  (max-width: 768px){
-     
+    header {
+        position: relative; 
+        padding: 0;
+        height: 80px;   
+    }
       nav {
         .brand-logo {
             left: 45%;
@@ -802,6 +804,7 @@ section{
         background-color: rgb(53, 48, 46);
         text-align: center;
         padding: 34px;
+        z-index: 2;
     }
         .header-search,
       .hide-on-med-and-down {
@@ -868,6 +871,10 @@ section{
       overflow: hidden;
       width: 100%;
   }
+  
+  #video-background {
+    width: 100%;
+}
   .media .col-3 {
        width: 75%; 
       padding: 0;
@@ -962,7 +969,7 @@ section{
       width: 155px;
   }
   section {
-       padding: 0; 
+       padding: 2em 0; 
   }
   .footer-links {
     .footer-item {   

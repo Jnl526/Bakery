@@ -1,6 +1,7 @@
 <main class="two bd-content" id="content" role="main">
 <div class="z">
-        <div class="banner cakes">
+        <div class="banner">
+        <img src="images/cakes-banner.jpg">
         <div class="banner-info">
 				<div class="container">
 				<h1>Cakes </h1>
@@ -11,12 +12,11 @@
         <section class="products">
             <div class="container">	
             <div class="card-wrapper">
-                    <% settings.bakery.cakes.each do |cake| %>
+                    <% settings.bakery.all.each do |cake| %>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=<%= cake.image %> alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><%= cake.name %><span class="card-text"><%= cake.price %></span></h5>
-                                <p class="card-text"><%= cake.description %></p>
                                 <p class="card-text"><%= cake.description %></p>
                                 <div class="product-quantity">
                                     <input type="number" value="2" min="1">
