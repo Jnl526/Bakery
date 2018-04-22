@@ -19,7 +19,8 @@ Used bootstrap framework for design
 # Post Built
 Link shopping cart to item quantity and "Add to cart" button. Active search bar.
 
-
+# Credits
+Thank you to Alexandra Cooper (babiesinspace) for a great find of the set method with Sinatra.
 
 
 
